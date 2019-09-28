@@ -1,0 +1,61 @@
+<header class="chatHead">
+    <button class="backToChatBtn pull-left" (click)="backToChatList()">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+      </button>
+    <div  class="contactImgCont pull-left">
+<img  src="{{_contactsData.loadedContact[0].img}}" class="contactImg"/>
+    </div>
+    <div class="contactDetails">
+<label class="contactName">{{_contactsData.loadedContact[0].name}}</label>
+<span [className]="_contactsData.loadedContact[0].isActive ? 'contactStat active' : 'contactStat dis-active'">
+  </span>
+  <span *ngIf="_contactsData.loadedContact[0].isActive;else offlineTxt" [className]="_contactsData.loadedContact[0].isActive ? 'contactStatTxt active' : 'contactStatTxt dis-active'">online</span>
+  <ng-template #offlineTxt>
+<span [className]="_contactsData.loadedContact[0].isActive ? 'contactStatTxt active' : 'contactStatTxt dis-active'">offline</span>
+  </ng-template>
+
+</div>
+          <div class="btn-group pull-right " dropdown placement="bottom right">
+              <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle chatActionBtn"
+              aria-controls="dropdown-alignment">
+                      <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+              </button>
+              <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu dropdown-menu-right"
+                  role="menu" aria-labelledby="button-basic">
+                <li role="menuitem"><a class="dropdown-item" href="#" (click)="_contactsData.muteChat(_contactsData.loadedContact[0].id)">Mute</a></li>
+                <li role="menuitem"><a class="dropdown-item" href="#" (click)="_contactsData.removeChat('archive',_contactsData.loadedContact[0].id)">Archive</a></li>
+                <li role="menuitem"><a class="dropdown-item" href="#" (click)="_contactsData.removeChat('delete',_contactsData.loadedContact[0].id)">Delete</a></li>
+              </ul>
+            </div>          
+</header>
+<div class="chatBdy">
+    <div *ngFor="let message of _contactsData.loadedContact[0].messages" [className]="message.type== 'recived'? 'recivedMsg msgCont' : 'sentMsg msgCont'">
+        <label class="msgContent" (click)="shotost()">
+          <label class="msgInnerCont">
+               <label class="msgBdy">{{message.text}}</label>
+               <label class="msgTime pull-right">{{message.time}}</label>
+          </label>
+        </label>
+           </div>
+
+           <div class="ctBoxFooter" >
+             <div class="sendMsgCont ">
+                <label  class="chatBxFile text-center">
+                <input  type="file" class="attachInput">
+                <i class="fa fa-link"></i>                      
+              </label>
+
+
+                 <input type="text"   matInput 
+                  (keydown.enter)="sendNewMsg(_contactsData.loadedContact[0].id);"
+                   required class="chatTextSendr" placeholder='Type your message' name="chatText"
+                id="msgBox"> 
+
+                <button  class="sendMsgBtn" (click)=sendNewMsg(_contactsData.loadedContact[0].id)>
+                  <i class="fa fa-paper-plane " aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+                
+        </div>
+       

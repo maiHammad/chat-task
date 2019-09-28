@@ -1,0 +1,120 @@
+
+
+$basicBgColor:#eee;
+$secondryTxtColor:#666666;
+$activeColor:#138bc3;
+$shadowColor:#bdbcbc;
+$online:#3fd83c;
+
+@mixin full-height {
+    height: 100%;
+}
+@mixin full-width {
+    width: 100%;
+}
+@mixin padding0 {
+padding:0;
+}
+
+@mixin displyInlinBlock {
+display: inline-block;
+  }
+  @mixin circleraduis {
+      border-radius: 50%;
+  }
+
+  @mixin siteBorder{
+    border: 1px solid #ddd;
+
+  }
+  .contactStat {
+    @include displyInlinBlock;
+    width: 12px;
+    height: 12px;
+    @include circleraduis;
+    &.active {
+        background-color:$online ;
+        color:$online ;
+    }
+    &.dis-active{
+        background-color: #a7a4a4;
+        color: #a7a4a4;
+    }
+}
+.hide{
+  display: none;
+}
+
+.contactName {
+  font-weight: 500;
+}
+
+@media (max-width: 1366px) {
+
+
+.sendMsgCont  {
+  input#msgBox{
+    width: 88%;
+}
+  .sendMsgBtn, .chatBxFile{
+    width: 6%;
+  }
+}
+.list-group-item {
+  padding: 0.75rem 0.1rem;
+  .contactStat{
+    right: -6px;
+  }
+  .contactDetails {
+    padding: 0;
+  }
+}
+
+  }
+
+  @media (max-width: 1152px) {
+    .list-group-item {
+      .contactStat{
+        right: 34px;
+      }
+    }
+    
+
+  } 
+  @media (max-width: 1024px) {
+    .list-group-item {
+      .contactStat{
+        right: 21px;
+      }
+    }
+    
+
+  } 
+
+  @media (max-width: 900px) {
+    .sendMsgCont  {
+      input#msgBox{
+        width: 82%;
+    }
+      .sendMsgBtn, .chatBxFile{
+        width: 9%;
+      }
+      .chatBxFile {
+        padding-top: 2.8%;
+      }
+    }
+
+
+  }
+
+  @media (max-width: 700px){
+    .sendMsgCont  {
+      input#msgBox{
+        width: 76%;
+    }
+      .sendMsgBtn, .chatBxFile{
+        width: 12%;
+      }
+    }
+
+  }

@@ -1,0 +1,87 @@
+@import '../../sharedStyle.scss';
+.filterContacts{
+    position: relative;
+    label[for='filterInput']{
+     position:absolute;
+     top: 1.1em;
+    left: 2em;
+    color: $shadowColor;
+    }
+}
+.searchInput {
+    border-radius: 20px;
+    margin: 10px 0px;
+    box-shadow: none;
+    @include siteBorder;
+    padding: 8px;
+    padding-left: 35px;
+}
+.list-group,.searchInput{
+    @include full-width;
+
+}
+
+.list-group-item{
+    height: 5.7em;
+transition: 0.5s all linear;
+}
+li.list-group-item,.list-group-item:first-child{
+    border-radius: 0;
+}
+img.contactImg {
+    width: 50px;
+    border: 1px solid #a7a4a4;
+}
+
+.contactImgCont,.contactDetails{
+    @include displyInlinBlock;
+}
+li:not(.active) .MsgTime,li:not(.active) .lastMsg,.muteIcon{
+    color:$secondryTxtColor;
+}
+.MsgTime,.lastMsg{
+font-size: .8em;
+}
+img.contactImg,.unreadCount{
+@include circleraduis;
+}
+span.unreadCount {
+    padding: 1px;
+    background-color: #fd7e14;
+    text-align: center;
+    height: 24px;
+    width: 26px;
+    color:#fff;
+}
+.list-group-item{
+    background-color: transparent;
+    border:none;
+    border-bottom: 1px solid #e0dede;
+    &.active{
+        background-color:$activeColor;
+        border-color:$activeColor;
+    }
+}
+
+.contactStat {
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+}
+
+ul.list-group {
+    overflow: scroll;
+    max-height: 100%;
+}
+.contactImgCont {
+    position: relative;
+}
+.contactName,span.unreadCount,.lastMsg{
+    display: block;
+
+}
+
+.muteIcon{
+    font-size: 1.2em;
+opacity: 0.5;
+}

@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xl-3 col-lg-4 col-md-5 col-sm-12 chatListCont" id="contListContain">
+<chat-list></chat-list>
+        </div>
+        <div class="col-xl-9 col-lg-8 col-md-7 col-sm-12  chatBodyCont" id="chatBoxCont">
+<chat-body *ngIf="_contactsData.loadedContact?.length;else welcomeMsg"></chat-body>
+<ng-template #welcomeMsg>
+        <h1 class="chatMsg text-center">Welcome</h1>
+</ng-template>       
+ </div>
+
+  </div>
+  </div>

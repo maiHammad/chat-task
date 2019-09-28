@@ -1,0 +1,204 @@
+@import '../../sharedStyle.scss';
+.chatHead {
+    padding: 10px 15px;
+}
+
+.ctBoxFooter {
+    position: absolute;
+    bottom: 15px;
+}
+.chatTextSendr{
+    @include siteBorder;
+
+}
+.attachInput{
+    display: none;
+}
+.chatBxFile i{
+    transform: rotate(-45deg);
+}
+
+.sendMsgCont,.ctBoxFooter {
+    @include full-width;
+  
+}
+.sendMsgCont{
+width: 95%;
+box-shadow: 1px 1px 5px $shadowColor;
+margin: 0 auto;
+}
+
+.chatHead,.sendMsgCont {
+    background-color: #fff;
+}
+.sendMsgBtn {
+    border: none;
+    background-color: $activeColor;
+    color: #fff;
+    &.unclickable{
+        pointer-events: none;
+        background: #939496;
+    }
+}
+.sendMsgBtn,.chatBxFile{
+    height: 2.5em;
+    width: 4%;
+    font-size: 1.3em;
+}
+.chatBxFile{
+    vertical-align: top;
+    margin:0;
+    padding-top: 0.8%;
+    border-right:1px solid $shadowColor;
+    color:$secondryTxtColor;
+}
+input#msgBox {
+    height: 3em;
+    width: 92%;
+    padding: 8px;
+&:focus{
+    outline:none;
+}
+}
+input#msgBox,.chatActionBtn,.open.show .chatActionBtn{
+ border: none !important;
+   
+}
+
+.chatActionBtn,.open.show .chatActionBtn{
+    background-color:transparent !important;
+    color: $activeColor !important;
+    &:after{
+        content: none;
+    }
+    &:focus{
+      box-shadow: none !important;
+    }
+}
+
+.msgContent{
+    margin-top: 4px;
+    padding: 10px;
+    clear: both;
+    border-radius: 4px;
+    position: relative;
+    font-size: .9rem;
+    box-shadow: 0 1px 1px #d4d4d4;
+    line-height: 1.8;
+    &.hasArrow:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        height: 0;
+        width: 0;
+        border-style: solid;
+    }
+    &.recivedMsg{
+        background-color:$activeColor;
+    }
+    &.sentMsg{
+        background-color: #fff;
+    }
+    label.msgInnerCont {
+        width: 100%;
+        min-width: 10em;
+        margin: 0;
+
+    }
+}
+img.contactImg {
+    width: 50px;
+    border: 1px solid #a7a4a4;
+    @include circleraduis;
+
+}
+
+
+
+.msgContent:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 0;
+    width: 0;
+    border-style: solid;
+}
+.sentMsg +.sentMsg .msgContent:after,.recivedMsg + .recivedMsg .msgContent:after{
+    content:none;
+}
+.msgTime {
+    opacity: 0.5;
+    font-size: 0.8em;
+}
+.msgCont {
+    width: auto;
+    &.sentMsg {
+        padding-right: 4%;
+     .msgContent {
+            float: right;
+            background: #fff;
+            color: #666666;
+            max-width: 90%;
+            margin-left: 4rem;
+            &:after{
+                border-color: transparent transparent #fff transparent;
+                top: -9px;
+                right: -19px;
+                border-width: 6px 10px 21px 18px;
+                transform: rotate(57deg);
+            }
+        }
+    }
+    &.recivedMsg  {
+        padding-left: 4%;
+    
+        .msgContent {
+        float: left;
+        background: $activeColor;
+        color:#fff;
+        margin-right: 4rem;
+        &:after{
+        border-width: 6px 35px 18px 18px;
+        transform: rotate(-23deg);
+        top: -10px;
+        left: -5px;
+            border-color: transparent transparent transparent  $activeColor;    
+            }
+    }
+    }
+}
+.chatHead .contactName {
+    display: block;
+}
+.contactImgCont ,.contactDetails{
+    @include displyInlinBlock;
+}
+.contactStatTxt {
+    padding-left: 5px;
+    &.active {
+        color:$online ;
+    }
+    &.dis-active{
+        color: #a7a4a4;
+    }
+}
+    
+.contactDetails {
+    padding-left: 10px;
+} 
+button.backToChatBtn {
+    border: none;
+    background-color: transparent;
+    display: none;
+    margin-top: 0.2em;
+    font-size: 1.5em;
+    margin-right: 0.5em;
+    &:active{
+      outline: none;
+    }
+}
+@media only screen and (max-width: 699px) {
+    button.backToChatBtn {
+        display:inline-block;
+    }
+}

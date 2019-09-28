@@ -1,0 +1,142 @@
+{
+    "contactsList":[
+        {
+        "img":"assets/img/6.jpg",
+        "name":"Hassan",
+        "id":0,
+        "messages":[],
+        "isActive":true,
+        "hasMsg":false,
+        "hasNewMsg":false,
+        "unreadCount":0,
+        "muted":false
+
+    },
+    {
+        "img":"assets/img/14.jpg",
+        "name":"Hisham",
+        "id":1,
+        "messages":[
+            {"text":"hello","type":"recived","time":"03:30 PM"},
+            {"text":"hello","type":"sent","time":"03:34 PM"},
+            {"text":"how are you","type":"recived","time":"03:40 PM"}
+        ],
+        "isActive":true,
+        "hasMsg":true,
+        "hasNewMsg":false,
+        "unreadCount":0,
+        "muted":false
+
+        },
+        {
+        "img":"assets/img/41.jpg",
+        "name":"john",
+        "id":2,
+        "messages":[
+            {"text":"hi there ","type":"recived","time":"02:30 PM"},
+            {"text":"hi john","type":"sent","time":"02:34 PM"},
+            {"text":"how are you","type":"sent","time":"02:40 PM"},
+            {"text":"fine ","type":"recived","time":"02:40 PM"}
+        ],
+        "isActive":false,
+        "hasMsg":true,
+        "hasNewMsg":false,
+        "unreadCount":0,
+        "muted":false
+
+        },
+        {
+        "img":"assets/img/47.jpg",
+        "name":"Mohamed Ali",
+        "id":3,
+        "messages":[
+            {"text":"hi hi","type":"recived","time":"12:30 PM"},
+            {"text":"how are you","type":"recived","time":"12:34 PM"},
+            {"text":"fine, how are you","type":"sent","time":"12:40 PM"},
+            {"text":"fine  ","type":"recived","time":"12:40 PM"}
+        ],
+        "isActive":true,
+        "hasMsg":true,
+        "hasNewMsg":false,
+        "unreadCount":0,
+        "muted":false
+
+    },
+        {
+        "img":"assets/img/62.jpg",
+        "name":"Mohsen",
+        "id":4,
+        "messages":[],
+        "isActive":true,
+        "hasMsg":false,
+        "hasNewMsg":false,
+        "unreadCount":0,
+        "muted":false
+
+    },
+        {
+            "img":"assets/img/64.jpg",
+            "name":"omar",
+            "id":5,
+            "messages":[
+            {"text":"hello","type":"recived","time":"11:30 PM"},
+            {"text":"hello","type":"sent","time":"11:34 PM"},
+            {"text":"how are you","type":"recived","time":"11:40 PM"},
+            {"text":"are you fine","type":"recived","time":"11:40 PM"}
+        ],
+            "isActive":false,
+            "hasMsg":true,
+            "hasNewMsg":false,
+            "unreadCount":0,
+            "muted":false
+
+        },
+        {
+            "img":"assets/img/79.jpg",
+            "name":"Sherif",
+            "id":6,
+            "messages":[],
+            "isActive":true,
+            "hasMsg":false,
+            "hasNewMsg":false,
+            "unreadCount":0,
+            "muted":false
+
+        },
+        {
+            "img":"assets/img/84.jpg",
+            "name":"yasser",
+            "id":7,
+            "messages":[
+                {"text":"hello ","type":"recived","time":"12:30 PM"},
+                {"text":"i am yasser","type":"recived","time":"12:34 PM"},
+                {"text":"hello yasser","type":"sent","time":"12:40 PM"},
+                {"text":"how are you","type":"recived","time":"12:40 PM"}
+            ],
+            "isActive":true,
+            "hasMsg":true,
+            "hasNewMsg":false,
+            "unreadCount":0,
+            "muted":false
+
+
+        },
+        {
+            "img":"assets/img/86.jpg",
+            "name":"ali",
+            "id":8,
+            "messages":[
+                {"text":"good evining","type":"recived","time":"03:30 PM"},
+                {"text":"good evining ali","type":"sent","time":"03:34 PM"},
+                {"text":"how are you ","type":"recived","time":"03:40 PM"}
+            ],
+            "isActive":true,
+            "hasMsg":true,
+            "hasNewMsg":false,
+            "unreadCount":0,
+            "muted":false
+
+
+            }
+]
+}

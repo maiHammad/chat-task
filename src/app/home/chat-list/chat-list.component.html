@@ -1,0 +1,35 @@
+<div  class="filterContacts  col-sm-12">
+    <label for="filterInput">
+             <i class="fa fa-search" aria-hidden="true"></i>
+   
+    </label>
+    <input #filterInput id="filterInput" autocomplete="off" class="searchInput" placeholder="Search" type="text" (keyup)="filtercontactsList(filterInput.value)">
+</div>
+
+<ul class="list-group">
+    <li *ngFor="let contact of _contactsData.allData;" class="list-group-item " id="contactLi{{contact.id}}" (click)="clickContactItem(contact.id,$event)">
+        <div  class="contactImgCont col-xl-2 col-lg-3 col-md-3 col-3 pull-left">
+            <img class="contactImg" src="{{contact.img}}">
+            <span [className]="contact.isActive ? 'contactStat active' : 'contactStat dis-active'"></span>
+        </div>
+        <div class="contactDetails col-xl-10 col-lg-9 col-md-9 col-9">
+            <label class="contactName">{{contact.name}}
+                    <span class="muteIcon pull-right" *ngIf="contact.muted"><i class="fa fa-microphone-slash" aria-hidden="true"></i></span>
+
+                    <span  class="unreadCount pull-right" *ngIf="contact.hasNewMsg">{{contact.unreadCount}}</span>
+            </label>
+
+                        <ng-container *ngFor="let message of contact.messages; last as isLast">
+                          <label class="lastMsg"  *ngIf="isLast">
+                                <span>{{message.text}}</span>
+                                <span class="MsgTime pull-right">{{message.time}}</span>
+                                
+                          </label>
+                        </ng-container>
+
+        </div>
+
+
+    </li> 
+
+  </ul>
